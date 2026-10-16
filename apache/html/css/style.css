@@ -1,0 +1,230 @@
+/* --- RESET Y ESTILOS GENERALES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #121824;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* --- CABECERA Y NAVEGACIÓN --- */
+header {
+    background-color: #0b0f17;
+    border-bottom: 1px solid #1e293b;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h2 {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.logo span {
+    color: #38bdf8;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #38bdf8;
+}
+
+.btn-nav {
+    background-color: #0284c7;
+    color: #ffffff !important;
+    padding: 8px 16px;
+    border-radius: 6px;
+}
+
+.btn-nav:hover {
+    background-color: #0369a1;
+}
+
+/* --- HERO SECTION (INICIO E IMAGEN AJUSTADA) --- */
+.hero-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-content h1 {
+    font-size: 32px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    color: #94a3b8;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.hero-img-container {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Control estricto del tamaño de la imagen */
+.img-ajustada {
+    width: 100%;
+    max-width: 450px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* --- SECCIONES REUTILIZABLES --- */
+.seccion {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.seccion h2 {
+    font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.caja-texto {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.info-contacto p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* --- TARJETAS DE SERVICIOS --- */
+.grid-servicios {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.tarjeta-servicio {
+    background-color: #1e293b;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+}
+
+.tarjeta-servicio h3 {
+    color: #38bdf8;
+    margin-bottom: 10px;
+}
+
+.tarjeta-servicio p {
+    color: #94a3b8;
+    font-size: 14px;
+}
+
+/* --- FORMULARIO DE CONTACTO --- */
+.formulario {
+    background-color: #1e293b;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+}
+
+.campo label {
+    font-size: 14px;
+    color: #cbd5e1;
+}
+
+.campo input, .campo textarea {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #334155;
+    background-color: #0f172a;
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #0284c7;
+    color: #ffffff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.btn-primary:hover {
+    background-color: #0369a1;
+}
+
+/* --- PIE DE PÁGINA --- */
+footer {
+    background-color: #0b0f17;
+    border-top: 1px solid #1e293b;
+    text-align: center;
+    padding: 20px;
+    color: #64748b;
+    font-size: 14px;
+    margin-top: 60px;
+}

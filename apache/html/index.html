@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Web Corporativa - Cliente Tech</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- CABECERA Y MENÚ DE NAVEGACIÓN -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <h2>Cliente <span>Tech Corp</span></h2>
+            </div>
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#conocenos">Conócenos</a>
+                <a href="#ubicacion">Ubicación</a>
+                <a href="#contacto" class="btn-nav">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- SECCIÓN INICIO-->
+        <section id="inicio" class="hero-section">
+            <div class="hero-content">
+                <h1>Innovación y Soluciones Cloud para tu Empresa</h1>
+                <p>Ayudamos a nuestros clientes a migrar, optimizar y asegurar su infraestructura en la nube con la tecnología más eficiente del mercado.</p>
+                <a href="#contacto" class="btn-primary">Solicitar Información</a>
+            </div>
+            <div class="hero-img-container">
+                <img src="img/guadalquivir-recorrido.webp" alt="Instalaciones Corporativas" class="img-ajustada">
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS -->
+        <section id="servicios" class="seccion">
+            <h2>Nuestros Servicios</h2>
+            <div class="grid-servicios">
+                <div class="tarjeta-servicio">
+                    <h3>☁️ Cloud Computing</h3>
+                    <p>Despliegue y gestión de entornos en la nube adaptados a las necesidades de cada proyecto.</p>
+                </div>
+                <div class="tarjeta-servicio">
+                    <h3>🔒 Ciberseguridad</h3>
+                    <p>Protección de datos, auditorías de seguridad y securización de servidores web.</p>
+                </div>
+                <div class="tarjeta-servicio">
+                    <h3>🚀 Consultoría DevOps</h3>
+                    <p>Automatización de procesos e integración continua para un desarrollo más rápido y seguro.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONÓCENOS -->
+        <section id="conocenos" class="seccion">
+            <h2>Sobre Nosotros</h2>
+            <div class="caja-texto">
+                <p>En <strong>Cliente Tech Corp</strong> somos una consultora especializada en la transformación digital y la gestión de infraestructuras web. Ofrecemos soluciones tecnológicas avanzadas para impulsar a empresas hacia el entorno Cloud de forma segura y eficiente.</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN DÓNDE NOS ENCONTRAMOS -->
+        <section id="ubicacion" class="seccion">
+            <h2>Dónde Nos Encontramos</h2>
+            <div class="caja-texto info-contacto">
+                <p>📍 <strong>Dirección:</strong> Sede Central - Parque Tecnológico, Sevilla</p>
+                <p>📧 <strong>Email:</strong> contacto@clientetech.com</p>
+                <p>📞 <strong>Teléfono:</strong> +34 954 00 00 00</p>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONTACTO -->
+        <section id="contacto" class="seccion">
+            <h2>Escríbenos</h2>
+            <form class="formulario">
+                <div class="campo">
+                    <label for="nombre">Nombre completo</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Ej. Juan Pérez" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+
+                <div class="campo">
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>&copy; 2026 Cliente Tech Corp. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

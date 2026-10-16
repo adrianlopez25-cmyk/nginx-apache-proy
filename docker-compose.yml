@@ -1,0 +1,33 @@
+services:
+  # Servidor de entrada / Proxy Inverso (Nginx Edge)
+  nginx-edge:
+    image: nginx:1.27-alpine
+    container_name: nginx_edge_proxy
+    restart: always
+    ports:
+      - "8080:80"  # Único punto de entrada expuesto al Host
+    volumes:
+      - ./nginx/conf/default.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - frontend-net
+    depends_on:
+      - apache-backend
+
+  # Servidor Web interno (Apache Backend) - AISLADO
+  apache-backend:
+    image: httpd:2.4-alpine
+    container_name: apache_backend_app
+    restart: always
+    # IMPORTANTE: No se usa 'ports' para cumplir con la regla de aislamiento perimetral.
+    # Apache solo es accesible por Nginx a través de la red interna 'frontend-net'.
+    volumes:
+      - ./apache/html:/usr/local/apache2/htdocs:ro
+      - ./apache/conf/httpd.conf:/usr/local/apache2/conf/httpd.conf:ro
+      - ./apache/logs:/usr/local/apache2/logs
+    networks:
+      - frontend-net
+
+# Red privada bridge para la comunicación entre contenedores
+networks:
+  frontend-net:
+    driver: bridge

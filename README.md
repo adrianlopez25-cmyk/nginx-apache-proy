@@ -10,22 +10,29 @@ En esta práctica he migrado una arquitectura web sencilla a un entorno multicap
 ---
 
 ## 2. Diagrama de Arquitectura
+
 Durante el desarrollo del ejercicio, la red y la comunicación entre contenedores han quedado estructuradas de la siguiente manera:
-                            HOST MACHINE(Puerto8080)
-                                    |
-                                    v
-+-----------------------------------------------------------------------------------+
-| Red Privada Docker (frontend-net - Bridge)                                        |
-|                                                                                   |
-|   +-----------------------+                    +------------------------------+   |
-|   |   Nginx Edge Proxy    |  proxy_pass:80     |   Apache Backend Server      |   |
-|   |  (nginx_edge_proxy)   |------------------->|    (apache_backend_app)     |   |
-|   |                       |                    |                              |   |
-|   | - Hardening Headers   |                    | - Aislado (sin puertos host) |   |
-|   | - Ocultación versión  |                    | - Trazabilidad mod_remoteip  |   |
-|   | - Inyección X-Forw-*  |                    | - Token Auth en /privado/    |   |
-|   +-----------------------+                    +------------------------------+   |
-+-----------------------------------------------------------------------------------+
+
+```text
+               +----------------------------------+
+               |           HOST MACHINE           |
+               |          (Puerto 8080)           |
+               +----------------+-----------------+
+                                |
+                                v
++-----------------------------------------------------------------+
+| Red Privada Docker (frontend-net - Bridge)                      |
+|                                                                 |
+|  +-----------------------+           +-----------------------+  |
+|  |   Nginx Edge Proxy    | proxy_80  | Apache Backend Server |  |
+|  |  (nginx_edge_proxy)   |---------->| (apache_backend_app)  |  |
+|  |                       |           |                       |  |
+|  | - Hardening Headers   |           | - Aislado (sin ports) |  |
+|  | - Ocultacion versión  |           | - IP Real mod_remoteip|  |
+|  | - Inyeccion X-Forw-*  |           | - Token en /privado/  |  |
+|  +-----------------------+           +-----------------------+  |
++-----------------------------------------------------------------+
+```
 
 ## 3. Justificación Técnica y Configuración
 

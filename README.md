@@ -52,10 +52,11 @@ En el archivo `default.conf` de Nginx he configurado:
 - **Zona Privada**: Mediante la regla `Require expr "%{HTTP:X-Auth-Token} == 'DAW2026'"` en el archivo `httpd.conf`, he bloqueado el acceso a la carpeta `/privado/`, respondiendo con un `403 Forbidden` si no se envía la cabecera adecuada y con un `200 OK` cuando esta es correcta.
 
 ---
-## 4. Estrutura empleada:
+## 4. Estructura empleada
+
+```text
 nginx-apache-proy-main/
 ├── .dockerignore
-├── .gitignore
 ├── docker-compose.yml
 ├── README.md
 ├── apache/
@@ -77,21 +78,31 @@ nginx-apache-proy-main/
 └── nginx/
     └── conf/
         └── default.conf
+```
 ## 5 pruebas de verifiacion necesarias
 ### 1 despliegue de contenedores
 docker compose up -d
+
 <img width="415" height="110" alt="Captura de pantalla 2026-10-16 102014" src="https://github.com/user-attachments/assets/ec442e2b-c0db-4e93-8a63-ced613c15615" />
+
 ### 2 Comprobación del Proxy y Hardening
 curl.exe -I http://localhost:8080/
+
 <img width="389" height="222" alt="acceso a la raiz" src="https://github.com/user-attachments/assets/c702311a-308c-4538-81b8-4f94ea383e12" />
+
 ### 3 Comprobación de la Zona Privada sin Token
 curl.exe -I http://localhost:8080/privado/
+
 <img width="539" height="247" alt="image" src="https://github.com/user-attachments/assets/8db14f67-149b-4ae0-9fb9-e741173d5cf3" />
+
 ### 4 Comprobación de la Zona Privada con Token
 curl.exe -i -H "X-Auth-Token: DAW2026" http://localhost:8080/privado/
+
 <img width="445" height="206" alt="auth-token correcto" src="https://github.com/user-attachments/assets/007cddc2-6e80-4d29-9330-00463249cb8b" />
+
 ### 5 Verificación de Trazabilidad e IP Real en Logs
 docker compose logs apache-backend
+
 <img width="528" height="387" alt="image" src="https://github.com/user-attachments/assets/087e5169-64a9-4fd4-a55f-d4203b24d42e" />
 
 
